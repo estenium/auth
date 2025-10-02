@@ -1,0 +1,64 @@
+@import 'tailwindcss';
+
+.g-form-field {
+  position: relative;
+}
+
+.g-form-field_input {
+  width: 100%;
+  border: 1px solid var(--gform-border);
+  border-radius: 5px;
+  height: 56px;
+  padding: 16px 14px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  outline: none;
+  background-color: transparent;
+}
+
+.g-form-field_label {
+  position: absolute;
+  top: 15px;
+  font-size: 16px;
+  left: 14px;
+  transition: 0.1s ease;
+  color: var(--gform-label);
+  background-color: var(--gform-background);
+  padding: 0 5px;
+}
+
+/* Input get focus: label */
+.g-form-field_input:focus ~ .g-form-field_label,
+.g-form-field.active .g-form-field_label {
+  top: -8px;
+  left: 11px;
+  color: var(--gform-border-active);
+  font-size: 13px;
+}
+
+/* Input has text: input */
+.g-form-field_input:focus,
+.g-form-field.active .g-form-field_input {
+  border: 2px solid var(--gform-border-active);
+}
+
+/* Error */
+
+.g-form-field_error {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  color: var(--gform-error);
+  cursor: default;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.g-form-field.error .g-form-field_label {
+  color: var(--gform-error);
+}
+
+.g-form-field.error .g-form-field_input {
+  border-width: 2px;
+  border-color: var(--gform-error);
+}

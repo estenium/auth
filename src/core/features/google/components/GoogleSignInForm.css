@@ -1,0 +1,174 @@
+@import 'tailwindcss';
+
+a {
+  color: var(--gform-link);
+  letter-spacing: 0.015625rem;
+  text-decoration: none;
+  outline: 0;
+}
+
+.g-form {
+  width: 340px;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background-color: var(--gform-background);
+}
+
+.g-form_header {
+  height: 48px;
+  margin-bottom: 24px;
+}
+
+.g-form_form {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.g-form_content {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.g-form_footer {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+.g-form_heading {
+  margin-bottom: 24px;
+}
+
+.g-form_heading[data-step='1'] {
+  min-height: 96px;
+}
+
+.g-form_heading[data-step='2'] {
+  min-height: 140px;
+}
+
+.g-form_title {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.g-form_subtitle {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 20px;
+}
+
+.g-form_user-email {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  height: 32px;
+  width: fit-content;
+  padding: 5px 14px 5px 5px;
+  border: 1px solid var(--gform-border);
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.g-form_field {
+  position: relative;
+  width: 100%;
+  min-height: 55px;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  margin-bottom: 8px;
+}
+
+.g-form_description {
+  display: flex;
+
+  flex-direction: column;
+  gap: 32px;
+  color: var(--gform-description);
+  line-height: 1.5;
+}
+
+/* .g-form_email-field .g-form_description,
+.g-form_password-field .g-form_description {
+  min-height: 146px;
+} */
+
+.g-form_toggle-password {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  margin-top: 4px;
+}
+
+.g-form_checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--gform-border);
+  border-radius: 2px;
+}
+
+.g-form_pointer {
+  cursor: pointer;
+  width: fit-content;
+}
+
+.g-form_button {
+  position: relative;
+  overflow: hidden;
+  color: var(--gform-button-text);
+  background-color: var(--gform-button-background);
+  height: 40px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0rem;
+  line-height: 1.42857143;
+  padding: 0 24px 0 24px;
+  border-radius: 20px;
+  border: none;
+  text-transform: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.g-form_button:active::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(0);
+  animation: ripple-animation 0.75s ease;
+  pointer-events: none;
+}
+
+.g-form_button:active::after {
+  width: 100px;
+  height: 100px; /* Same as width */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+@media (prefers-color-scheme: dark) {
+  .g-form_button:active::after {
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: translate(-50%, -50%) scale(5);
+    opacity: 0;
+  }
+}

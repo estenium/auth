@@ -1,0 +1,121 @@
+.g-progressbar {
+  position: absolute;
+  height: 4px;
+  top: 0;
+  left: 28px;
+  right: 28px;
+  z-index: 10;
+  margin: 0;
+  width: auto;
+  border-radius: 4px;
+  background-color: var(--gform-progressbar-background);
+  transition: opacity 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.progress {
+  background-color: var(--gform-progressbar);
+}
+
+.progress::after {
+  content: '';
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+  animation: progress-short 2s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+  animation-delay: 0s;
+  -webkit-animation-delay: 1.15s;
+  animation-delay: 1.15s;
+}
+.progress::before {
+  content: '';
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+  animation: progress 2s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+}
+
+@media (min-width: 600px) {
+  .g-progressbar {
+    left: 24px;
+    right: 24px;
+  }
+}
+@media (min-width: 840px) and (orientation: landscape) {
+  .g-progressbar {
+    left: 32px;
+    right: 32px;
+  }
+}
+@media (min-width: 960px) {
+  .g-progressbar {
+    left: 24px;
+    right: 24px;
+  }
+}
+@media (min-width: 960px) and (orientation: landscape) {
+  .g-progressbar {
+    left: 36px;
+    right: 36px;
+  }
+}
+@media (min-width: 1240px) {
+  .g-progressbar {
+    left: 24px;
+    right: 24px;
+  }
+}
+@media (min-width: 1240px) and (orientation: landscape) {
+  .g-progressbar {
+    left: 36px;
+    right: 36px;
+  }
+}
+@media (min-width: 1600px) {
+  .g-progressbar {
+    left: 36px;
+    right: 36px;
+  }
+}
+@media (min-width: 1600px) and (orientation: landscape) {
+  .g-progressbar {
+    left: 36px;
+    right: 36px;
+  }
+}
+
+@keyframes progress-short {
+  0% {
+    left: -200%;
+    right: 100%;
+  }
+  60% {
+    left: 107%;
+    right: -8%;
+  }
+  100% {
+    left: 107%;
+    right: -8%;
+  }
+}
+
+@keyframes progress {
+  0% {
+    left: -35%;
+    right: 100%;
+  }
+  60% {
+    left: 100%;
+    right: -90%;
+  }
+  100% {
+    left: 100%;
+    right: -90%;
+  }
+}
